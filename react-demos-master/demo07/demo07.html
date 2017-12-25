@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+<body>
+  <div id="demo7"></div>
+  <script type="text/babel">
+    var Mycomponent = React.createClass({
+      onclick1: function(){
+        // this.refs.test.focus();
+        this.refs.myTextInput.focus();
+        // this.refs.myTextInput.function(){
+        //   value="XM,这是你第７个React DEmo7"
+        // };
+      },
+      render:function () {
+        return(
+          <div>
+             <input type="text" ref="myTextInput"/>
+             <input type ="button"value="focus button" onClick={this.onclick1} />
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+    <Mycomponent />,
+    document.getElementById("demo7")
+    )
+  </script>
+</body>
+</html>

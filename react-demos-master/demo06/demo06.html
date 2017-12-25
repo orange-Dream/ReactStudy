@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+<body>
+  <div id="demo6"></div>
+  <script type="text/babel">
+    var data = "XM"
+    var Message = React.createClass({
+      // render:
+      propTypes :{
+        title : React.PropTypes.string.isRequired,
+      },
+      render : function (params) {
+        return <h1>{this.props.title} ! 这是你第六个React Demo6 !</h1>
+      }
+    });
+    ReactDOM.render(
+      <Message title ={data}/>,
+      document.getElementById("demo6")
+    )
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+    // html语言直接写在ｊａｖａｓｃｒｉｐｔ中，这就是ｊｓｘ语法，允许混写
+      var names = ['Alice', 'Emily', 'Kate'];
+      ReactDOM.render(
+        <div>
+        {
+          //"<"开头，就用ＨＴＭ规则解析
+          //"{"开头，就用javascript规则解析
+          names.map(function (name, index) {
+            return <div key={index}>Hello, {name}!</div>
+          })
+        }
+        </div>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

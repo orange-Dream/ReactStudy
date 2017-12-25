@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+<body>
+  <div id="demo10"></div>
+  <script type="text/babel">
+    var Hello = React.createClass({
+      getInitialState:function(){
+        return {
+          opacity:1.0
+        }
+      },
+      componentDidMount:function(){
+        this.time = setInterval(function(){
+          var opacity1 =this.state.opacity
+          opacity1 -=0.2
+          if(opacity1<=0.1){
+            opacity1 =1.0
+          }
+          this.setState({
+            opacity:opacity1
+          })
+        }.bind(this),500)
+      },
+      render :function (params) {
+        return (
+         <h1 style={{opacity:this.state.opacity}}>Hello XM !这是你第１０的React Demo !</h1>
+        )
+      }
+    })
+    ReactDOM.render(
+      <Hello name="XM"/>,
+      document.getElementById("demo10")
+    )
+  </script>
+</body>
+</html>

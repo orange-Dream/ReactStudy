@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script><!--核心库 -->
+    <script src="../build/react-dom.js"></script><!-- 提供与ＤＯＭ相关的功能-->
+    <script src="../build/browser.min.js"></script><!--将ＪＳＸ语法装维ＪａｖａＳｃｒｉｐｔ语法-->
+    <!-- <script tupe="text/babel"> -->
+      <!--
+        babel src --out-dir bulid:
+          将ｓｃｒ子目录的ｊｓ文件进行语法转换，转码后的文件放在bulid文件内
+      -->
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      ReactDOM.render( //最基本的方法，用于将模板转为ＨＴＭＬ语言，并插入制定的ＤＯＭ节点中
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+<body>
+  <div id="demo8"></div>
+  <script type="text/babel">
+  var Mycompontent = React.createClass({
+
+    getInitialState:function(){
+      return {name:false};
+    },
+    onclick1:function(event){
+      this.setState({name:!this.state.name});
+    },
+    render: function () {
+      // var text ="Xm";
+      var text = this.state.name ? "XM" : "XieMei";
+      return <h1 onClick={this.onclick1}>Hello {text} !这是你第８个react Demo8<p>onclick toggle !</p></h1>
+    }
+  })
+    ReactDOM.render(
+      <Mycompontent />,
+      document.getElementById("demo8")
+    )
+  </script>
+</body>
+</html>

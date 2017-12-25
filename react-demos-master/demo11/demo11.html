@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+  <script src="../build/jquery.min.js"></script>
+</head>
+<body>
+  <div id="demo11"></div>
+  <script type="text/babel">
+    var Demo11 = React.createClass({
+      getInitialState: function(){
+        return {
+          name : "xm",
+          url: "链接"
+        };
+      },
+      componentDidMount: function(){
+        $.get(this.props.source,function(result){
+          var name1 = result[2]
+          console.log("name1 :"+name1)
+          this.setState({
+            name:name1.owner.login,
+            url:name1.html_url
+          })
+        }.bind(this))
+      },
+      render: function(params) {
+        return (
+          <div>
+            {this.state.name} ! 这是你第１１个　React Demo !
+            <hr/>
+            <a>{this.state.url}</a>
+          </div>
+        );
+      }
+    })
+    ReactDOM.render(
+      <Demo11 source="https://api.github.com/users/octocat/gists" />,
+      document.getElementById("demo11")
+    )
+  </script>
+</body>
+</html>
