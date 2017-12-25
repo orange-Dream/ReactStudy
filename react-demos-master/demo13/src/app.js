@@ -38,3 +38,8 @@ export default class App extends React.Component{
     )
   }
 };
+
+git:最先进的分布式版本控制系统
+版本控制软件
+repository :版本库／仓库　＝＝　目录
+  每个文件都能被追踪
